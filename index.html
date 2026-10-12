@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[YOUR NAME] | Portfolio</title>
+<meta name="description" content="Personal portfolio: certificates, projects and contact details.">
+<meta property="og:title" content="[YOUR NAME] | Portfolio">
+<meta property="og:description" content="Personal portfolio: certificates, projects and contact details.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070b1a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="preloader" aria-hidden="true"><div class="pl-logo">P</div><div class="pl-bar"><i></i></div></div>
+<div id="progress"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="orb o1" aria-hidden="true"></div><div class="orb o2" aria-hidden="true"></div>
+
+<header class="nav glass">
+  <a href="#home" class="brand" data-s="name">[YOUR NAME]</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  <nav id="menu">
+    <a href="#about">About</a><a href="#certificates">Certificates</a><a href="#projects">Projects</a><a href="#cv">CV</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <button class="icon-btn" id="editToggle" aria-pressed="false" title="Toggle edit mode">Edit</button>
+    <button class="icon-btn" id="themeBtn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="rv hello">Hello, I'm</p>
+    <h1 class="rv grad" data-s="name">[YOUR NAME]</h1>
+    <h2 class="rv" data-s="title">[YOUR PROFESSIONAL TITLE]</h2>
+    <p class="rv type"><span id="typed"></span><span class="caret"></span></p>
+    <p class="rv intro" data-s="intro">[YOUR SHORT INTRODUCTION]</p>
+    <div class="rv btns">
+      <a class="btn primary" href="#projects">Explore my work</a>
+      <a class="btn" href="#certificates">View certificates</a>
+      <a class="btn" id="cvHero" href="#cv">Download CV</a>
+    </div>
+    <div class="rv socials small" data-socials></div>
+  </div>
+  <div class="rv photo-wrap"><div class="ring"></div><img id="photo" class="photo" alt="Portrait of the portfolio owner" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23111a3a'/%3E%3Ccircle cx='200' cy='155' r='62' fill='%2338508f'/%3E%3Cpath d='M70 380c10-90 70-130 130-130s120 40 130 130z' fill='%2338508f'/%3E%3C/svg%3E"></div>
+  <a href="#about" class="scroll" aria-label="Scroll down"><i></i></a>
+</section>
+
+<section id="about" class="sec">
+  <h2 class="rv">About me</h2>
+  <div class="split">
+    <div class="rv glass pad">
+      <p class="bio" data-s="about">[Write your biography here.]</p>
+      <dl class="facts">
+        <dt>Location</dt><dd data-s="location">[Your location]</dd>
+        <dt>Email</dt><dd data-s="email">[your@email.com]</dd>
+        <dt>Phone</dt><dd data-s="phone"></dd>
+      </dl>
+    </div>
+    <div class="rv stats">
+      <div class="glass pad stat"><b data-count="cert">0</b><span>Certificates</span></div>
+      <div class="glass pad stat"><b data-count="project">0</b><span>Projects</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="certificates" class="sec">
+  <h2 class="rv">Certificates</h2>
+  <div class="coll" data-type="cert"></div>
+</section>
+
+<section id="projects" class="sec">
+  <h2 class="rv">Projects</h2>
+  <div class="coll" data-type="project"></div>
+</section>
+
+<section id="cv" class="sec">
+  <h2 class="rv">CV</h2>
+  <div class="rv glass pad cvbox">
+    <div id="cvInfo"></div>
+    <div class="btns"><a class="btn primary" id="cvDl" hidden>Download CV</a><label class="btn edit-only">Upload or replace CV<input type="file" id="cvFile" accept="application/pdf" hidden></label></div>
+    <iframe id="cvPrev" title="CV preview" hidden></iframe>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <h2 class="rv">Contact</h2>
+  <form id="cform" class="rv glass pad" novalidate>
+    <div class="row"><label>Name<input name="name" required autocomplete="name"></label><label>Email<input name="email" type="email" required autocomplete="email"></label></div>
+    <label>Subject<input name="subject" required></label>
+    <label>Message<textarea name="message" rows="5" required></textarea></label>
+    <button class="btn primary" type="submit">Open in email app</button>
+    <p id="cmsg" role="status"></p>
+    <small>This site has no server, so the form opens your email app with the message filled in. Nothing is sent until you press send there.</small>
+  </form>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="socials" data-socials></div>
+  <nav><a href="#about">About</a><a href="#certificates">Certificates</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+  <p>© 2026 <span data-s="name">[YOUR NAME]</span>. All Rights Reserved.</p>
+  <p>Designed by <span data-s="footer">[YOUR NAME]</span>.</p>
+  <button class="btn edit-only" id="openSettings">Edit site settings</button>
+</footer>
+
+<button id="top" aria-label="Back to top">↑</button>
+
+<dialog id="detail" class="glass"></dialog>
+<dialog id="formDlg" class="glass"><form method="dialog" id="itemForm" novalidate></form></dialog>
+<dialog id="settingsDlg" class="glass"><form id="setForm" novalidate></form></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
